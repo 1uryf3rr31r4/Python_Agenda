@@ -11,4 +11,6 @@ def adicionar_contato():
         'email':email.lower(),
         'nome':input('Nome: ').strip().capitalize(),
         'sobrenome':input('Sobrenome: ').strip().capitalize(),
+        'telefone': input('Telefone: ').strip(),
+        'data': date.today().strftime('%d/%m/%Y')
     })
