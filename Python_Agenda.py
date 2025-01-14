@@ -6,3 +6,9 @@ def adicionar_contato():
             if email == contato['email']:
                 print('Este contato já existe.')
                 return True
+    
+    contatos.append({
+        'email':email.lower(),
+        'nome':input('Nome: ').strip().capitalize(),
+        'sobrenome':input('Sobrenome: ').strip().capitalize(),
+    })
