@@ -14,3 +14,7 @@ def adicionar_contato():
         'telefone': input('Telefone: ').strip(),
         'data': date.today().strftime('%d/%m/%Y')
     })
+
+def alterar_contato():
+    if len(contatos)>0:
+        email:input('Digite o e-mail do contato que deseja alterar: ')
