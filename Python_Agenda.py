@@ -1,3 +1,12 @@
+def menu():
+    print('Programa Agenda'.center(100,' '))
+    print('Adicionar contato')
+    print('Alterar contato')
+    print('Procurar contato')
+    print('Remover contato')
+    print('Ver contatos')
+    print('Sair')
+
 def adicionar_contato():
     print('Adicionar Contato')
     email=input('Digite o E-mail: ')
@@ -18,3 +27,5 @@ def adicionar_contato():
 def alterar_contato():
     if len(contatos)>0:
         email:input('Digite o e-mail do contato que deseja alterar: ')
+
+menu()
