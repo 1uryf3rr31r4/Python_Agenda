@@ -57,6 +57,13 @@ def alterar_contato():
     else:
         print('Não há contatos registrados na agenda')
 
+def ver_contatos():
+    if len(contatos)>0:
+        contatos_ordenados=sorted(contatos,key=lambda contato:contato['nome']+' '+contato['sobrenome'])
+        for indice, contato in enumerate(contatos_ordenados, start=1):
+            print(f'Contato {indice}'.center(100, ''))
+            print(f'Nome: {contato['nome']} {contato['sobrenome']}')
+            print(f'E-mail: {contato['email']}')
 
 def main():
     escolha=''
@@ -66,6 +73,8 @@ def main():
 
         if escolha==str(1):
             adicionar_contato()
+        elif escolha==str(5):
+            ver_contatos()
 
         else:
             if escolha == str(6):
