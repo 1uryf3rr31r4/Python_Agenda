@@ -30,8 +30,9 @@ def adicionar_contato():
     })
 
 def alterar_contato():
+    email = ''
     if len(contatos)>0:
-        email:input('Digite o e-mail do contato que deseja alterar: ')
+        email=input('Digite o e-mail do contato que deseja alterar: ')
         for contato in contatos:
             if contato['email']==email:
                 print(f"Nome do contato: {contato['nome']}")
@@ -77,6 +78,8 @@ def main():
 
         if escolha==str(1):
             adicionar_contato()
+        elif escolha==str(2):
+            alterar_contato()
         elif escolha==str(5):
             ver_contatos()
 
@@ -84,7 +87,7 @@ def main():
             if escolha == str(6):
                 print('Fim do Programa')
             else:
-                print('Escohla Inválida')
+                print('Escolha Inválida')
 
 if __name__=='__main__':
     main()
