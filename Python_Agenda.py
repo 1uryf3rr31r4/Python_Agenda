@@ -38,5 +38,22 @@ def alterar_contato():
                 print('3 - Voltar')
                 escolha=input('>> ')
 
+                if escolha==str(1):
+                    novo_nome=input('Digite um novo nome para o contato: ')
+                    contato['nome']=novo_nome
+                    return
+                elif escolha==str(2):
+                    novo_tel=input('Digite um novo telefone para o contato: ')
+                    contato['telefone']=novo_tel
+                    return
+                elif escolha==str(3):
+                    return
+                else:
+                    print('Opção Inválida')
+        print('Não existe usuário cadastrado com o e-mail informado.')
+    else:
+        print('Não há contatos registrados na agenda')
+
+
 
 menu()
