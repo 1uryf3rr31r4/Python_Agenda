@@ -1,6 +1,7 @@
 from datetime import date
 data_registro=date.today().strftime('%d/%m/%Y')
 contatos=list()
+email = ''
 
 
 def menu():
@@ -30,7 +31,6 @@ def adicionar_contato():
     })
 
 def alterar_contato():
-    email = ''
     if len(contatos)>0:
         email=input('Digite o e-mail do contato que deseja alterar: ')
         for contato in contatos:
@@ -58,6 +58,21 @@ def alterar_contato():
     else:
         print('Não há contatos registrados na agenda')
 
+def procurar_contato():
+    if len(contatos)>0:
+        email=input('Digite o e-mail do contato: ')
+        for contato in contatos:
+            if contato['email']==email:
+                print(f"Nome: {contato['nome']} {contato['sobrenome']}")
+                print(f"Telefone: {contato['telefone']}")
+                print(f"Data de registro: {contato['data']}")
+                return
+            else:
+                print('Esse email não consta na agenda')
+                return
+
+    print('Não há contatos registrados na agenda')
+
 def ver_contatos():
     if len(contatos)>0:
         contatos_ordenados=sorted(contatos,key=lambda contato:contato['nome']+' '+contato['sobrenome'])
@@ -80,6 +95,8 @@ def main():
             adicionar_contato()
         elif escolha==str(2):
             alterar_contato()
+        elif escolha==str(3):
+            procurar_contato()
         elif escolha==str(5):
             ver_contatos()
 
