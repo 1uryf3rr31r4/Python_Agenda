@@ -1,4 +1,7 @@
-contato=list()
+from datetime import date
+data_registro=date.today().strftime('%d/%m/%Y')
+contatos=list()
+
 
 def menu():
     print('Programa Agenda'.center(100,' '))
@@ -12,7 +15,7 @@ def menu():
 def adicionar_contato():
     print('Adicionar Contato')
     email=input('Digite o E-mail: ')
-    if len(dados)>0:
+    if len(contatos)>0:
         for contato in contatos:
             if email == contato['email']:
                 print('Este contato já existe.')
@@ -55,5 +58,20 @@ def alterar_contato():
         print('Não há contatos registrados na agenda')
 
 
+def main():
+    escolha=''
+    while escolha!=str(6):
+        menu()
+        escolha=input('>> ')
 
-menu()
+        if escolha==str(1):
+            adicionar_contato()
+
+        else:
+            if escolha == str(6):
+                print('Fim do Programa')
+            else:
+                print('Escohla Inválida')
+
+if __name__=='__main__':
+    main()
