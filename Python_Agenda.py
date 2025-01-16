@@ -1,3 +1,5 @@
+contato=list()
+
 def menu():
     print('Programa Agenda'.center(100,' '))
     print('Adicionar contato')
@@ -27,5 +29,14 @@ def adicionar_contato():
 def alterar_contato():
     if len(contatos)>0:
         email:input('Digite o e-mail do contato que deseja alterar: ')
+        for contato in contatos:
+            if contato['email']==email:
+                print(f"Nome do contato: {contato['nome']}")
+                print(f"Telefone: {contato['telefone']}")
+                print('1 - Alterar nome')
+                print('2 - Alterar telefone')
+                print('3 - Voltar')
+                escolha=input('>> ')
+
 
 menu()
