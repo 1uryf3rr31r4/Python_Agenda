@@ -5,12 +5,12 @@ contatos=list()
 
 def menu():
     print('Programa Agenda'.center(100,' '))
-    print('Adicionar contato')
-    print('Alterar contato')
-    print('Procurar contato')
-    print('Remover contato')
-    print('Ver contatos')
-    print('Sair')
+    print('1 - Adicionar contato')
+    print('2 - Alterar contato')
+    print('3 - Procurar contato')
+    print('4 - Remover contato')
+    print('5 - Ver contatos')
+    print('6 - Sair')
 
 def adicionar_contato():
     print('Adicionar Contato')
@@ -61,9 +61,13 @@ def ver_contatos():
     if len(contatos)>0:
         contatos_ordenados=sorted(contatos,key=lambda contato:contato['nome']+' '+contato['sobrenome'])
         for indice, contato in enumerate(contatos_ordenados, start=1):
-            print(f'Contato {indice}'.center(100, ''))
-            print(f'Nome: {contato['nome']} {contato['sobrenome']}')
-            print(f'E-mail: {contato['email']}')
+            print(f"Contato {indice}".center(100, ' '))
+            print(f"Nome: {contato['nome']} {contato['sobrenome']}")
+            print(f"E-mail: {contato['email']}")
+            print(f"Telefone: {contato['telefone']}")
+            print(f"Data de Registro: {contato['data']}")
+    else:
+        print('Não há contatos registrados na agenda')
 
 def main():
     escolha=''
