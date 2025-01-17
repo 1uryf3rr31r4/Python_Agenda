@@ -73,6 +73,20 @@ def procurar_contato():
 
     print('Não há contatos registrados na agenda')
 
+def remover_contato():
+    if len(contatos)>0:
+        email=input('Digite o e-mail do contato que deseja remover: ')
+        x=0
+        while x<len(contatos):
+            if contatos[x]['email']==email:
+                contatos.remove(contatos[x])
+                return True
+            x+=1
+
+        print('Contato não encontrado')
+    else:
+        print('Não há contatos registrados na agenda.')
+
 def ver_contatos():
     if len(contatos)>0:
         contatos_ordenados=sorted(contatos,key=lambda contato:contato['nome']+' '+contato['sobrenome'])
@@ -97,6 +111,8 @@ def main():
             alterar_contato()
         elif escolha==str(3):
             procurar_contato()
+        elif escolha==str(4):
+            remover_contato()
         elif escolha==str(5):
             ver_contatos()
 
