@@ -5,13 +5,14 @@ email = ''
 
 
 def menu():
-    print('Programa Agenda'.center(100,' '))
+    print('Programa Agenda'.center(100,'='))
     print('1 - Adicionar contato')
     print('2 - Alterar contato')
     print('3 - Procurar contato')
     print('4 - Remover contato')
     print('5 - Ver contatos')
     print('6 - Sair')
+    print('='*100)
 
 def adicionar_contato():
     print('Adicionar Contato')
